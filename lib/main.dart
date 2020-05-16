@@ -10,6 +10,8 @@ class MyApp extends StatelessWidget {
   static const String appName = 'Personal Expenses';
   static const MaterialColor primaryColor = Colors.purple;
   static const MaterialColor accentColor = Colors.amber;
+  static const String mainFont = 'Quicksand';
+  static const String altFont = 'OpenSans';
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,23 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: primaryColor,
         accentColor: accentColor,
+        fontFamily: mainFont,
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline6: TextStyle(
+                fontFamily: 'OpenSans',
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+        appBarTheme: AppBarTheme(
+          textTheme: ThemeData.light().textTheme.copyWith(
+                headline6: TextStyle(
+                  fontFamily: altFont,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+        ),
       ),
       home: MyHomePage(),
     );
