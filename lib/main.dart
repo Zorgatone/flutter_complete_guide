@@ -7,10 +7,18 @@ import './widgets/new_transaction.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  static const String appName = 'Personal Expenses';
+  static const MaterialColor primaryColor = Colors.purple;
+  static const MaterialColor accentColor = Colors.amber;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
+      title: appName,
+      theme: ThemeData(
+        primarySwatch: primaryColor,
+        accentColor: accentColor,
+      ),
       home: MyHomePage(),
     );
   }
@@ -63,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App'),
+        title: Text(MyApp.appName),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
